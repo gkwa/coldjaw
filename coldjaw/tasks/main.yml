@@ -1,2 +1,9 @@
----
-# tasks file for coldjaw
+- name: Create ~/.config/nvim directory.
+  ansible.builtin.file:
+    state: directory
+    path: ~/.config/nvim
+
+- name: Deploy init.lua.
+  ansible.builtin.template:
+    src: init.lua.j2
+    dest: ~/.config/nvim/init.lua
